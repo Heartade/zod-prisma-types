@@ -1,6 +1,6 @@
 {
   "name": "zod-prisma-types",
-  "version": "3.2.5-20250710+heartade",
+  "version": "3.2.5-20250807+heartade",
   "description": "Generates zod schemas from Prisma models with advanced validation",
   "author": "Chris Hörmann",
   "license": "MIT",
@@ -49,7 +49,7 @@
     "@prisma/generator-helper": "^6.3.0",
     "code-block-writer": "^12.0.0",
     "lodash": "^4.17.21",
-    "zod": "^3.24.1"
+    "zod": "^3.25.67"
   },
   "peerDependencies": {
     "@prisma/client": "^4.x.x || ^5.x.x || ^6.x.x",

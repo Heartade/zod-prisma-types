@@ -197,7 +197,7 @@ export class ExtendedDMMFSchemaField
     const imports: writeImportStatementOptions[] = [
       {
         name: 'z',
-        path: 'zod',
+        path: 'zod/v4',
       },
       prismaImport,
     ];

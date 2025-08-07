@@ -9,7 +9,7 @@ export const writeJsonValue = ({
 
   if (useMultipleFiles && !getSingleFileContent) {
     writeImports([
-      { name: 'z', path: 'zod' },
+      { name: 'z', path: 'zod/v4' },
       { name: 'Prisma', path: prismaClientPath, isTypeOnly: true },
     ]);
   }
@@ -28,7 +28,9 @@ export const writeJsonValue = ({
             .writeLine(`z.number(),`)
             .writeLine(`z.boolean(),`)
             .writeLine(`z.literal(null),`)
-            .writeLine(`z.record(z.lazy(() => JsonValueSchema.optional())),`)
+            .writeLine(
+              `z.record(z.union([z.string(), z.number()]), z.lazy(() => JsonValueSchema.optional())),`,
+            )
             .writeLine(`z.array(z.lazy(() => JsonValueSchema)),`);
         })
         .writeLine(`])`);

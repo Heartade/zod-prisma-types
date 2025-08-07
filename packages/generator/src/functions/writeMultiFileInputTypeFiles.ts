@@ -1,6 +1,7 @@
 import {
   writeCustomEnum,
   writeDecimalJsLike,
+  writeFunction,
   writeInclude,
   writeInputJsonValue,
   writeInputObjectType,
@@ -56,6 +57,8 @@ export const writeInputTypeFiles: CreateFiles = ({ path, dmmf }) => {
             writeExportSet.add(`isValidDecimalInput`);
           }
 
+          writeExportSet.add(`CreateFunctionSchema`);
+
           writeExportSet.forEach((exportName) => {
             writeExport(`{ ${exportName} }`, `./${exportName}`);
           });
@@ -66,6 +69,14 @@ export const writeInputTypeFiles: CreateFiles = ({ path, dmmf }) => {
     ////////////////////////////////////////////////////
     // WRITE HELPER FUNCTIONS & SCHEMAS
     ////////////////////////////////////////////////////
+
+    // FUNCTION
+    // ------------------------------------------------------------
+
+    new FileWriter(dmmf.generatorConfig).createFile(
+      `${folderPath}/CreateFunctionSchema.ts`,
+      (fileWriter) => writeFunction({ fileWriter, dmmf }),
+    );
 
     // JSON
     // ------------------------------------------------------------

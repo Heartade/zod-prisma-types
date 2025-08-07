@@ -4,6 +4,7 @@ export * from './writeCountSelect';
 export * from './writeCustomEnum';
 export * from './writeDecimalJsLike';
 export * from './writeDecimalJsLikeList';
+export * from './writeFunction';
 export * from './writeInclude';
 export * from './writeInputJsonValue';
 export * from './writeInputObjectType';

@@ -11,7 +11,7 @@ export const writeSingleFileImportStatements: WriteStatements = (
 ) => {
   const { prismaClientPath, decimalJSInstalled } = dmmf.generatorConfig;
   const imports: writeImportStatementOptions[] = [];
-  imports.push({ name: 'z', path: 'zod' });
+  imports.push({ name: 'z', path: 'zod/v4' });
 
   // Prisma should primarily be imported as a type, but if there are json fields,
   // we need to import the whole namespace because the null transformation

@@ -18,7 +18,7 @@ export const writeModelOrType = (
 
   if (useMultipleFiles && !getSingleFileContent) {
     const imports: writeImportStatementOptions[] = [];
-    imports.push({ name: 'z', path: 'zod' });
+    imports.push({ name: 'z', path: 'zod/v4' });
     imports.push(...model.imports);
 
     if (createRelationValuesTypes && model.hasRelationFields) {

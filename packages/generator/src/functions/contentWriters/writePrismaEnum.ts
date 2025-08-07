@@ -17,7 +17,7 @@ export const writePrismaEnum = (
   if (useMultipleFiles) {
     const imports: writeImportStatementOptions[] = [];
     if (!getSingleFileContent) {
-      imports.push({ name: 'z', path: 'zod' });
+      imports.push({ name: 'z', path: 'zod/v4' });
     }
     if (
       [

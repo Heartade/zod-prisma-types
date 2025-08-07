@@ -1,6 +1,7 @@
 import {
   writeDecimalJsLike,
   // writeDecimalJsLikeList,
+  writeFunction,
   writeInputJsonValue,
   writeIsValidDecimalInput,
   writeJsonValue,
@@ -20,6 +21,8 @@ export const writeSingleFileHelperStatements: WriteStatements = (
   fileWriter.writer.blankLine();
   fileWriter.writeHeading('HELPER FUNCTIONS', 'FAT');
   fileWriter.writer.blankLine();
+
+  writeFunction({ fileWriter, dmmf });
 
   // JSON
   // ------------------------------------------------------------

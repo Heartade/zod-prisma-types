@@ -17,7 +17,7 @@ export const writeCountSelect = (
 
   if (useMultipleFiles && !getSingleFileContent) {
     writeImports([
-      { name: 'z', path: 'zod' },
+      { name: 'z', path: 'zod/v4' },
       { name: 'Prisma', path: prismaClientPath, isTypeOnly: true },
     ]);
   }

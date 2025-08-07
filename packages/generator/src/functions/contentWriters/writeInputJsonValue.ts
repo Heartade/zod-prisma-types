@@ -9,8 +9,9 @@ export const writeInputJsonValue = ({
 
   if (useMultipleFiles && !getSingleFileContent) {
     writeImports([
-      { name: 'z', path: 'zod' },
+      { name: 'z', path: 'zod/v4' },
       { name: 'Prisma', path: prismaClientPath },
+      { name: 'CreateFunctionSchema', path: './CreateFunctionSchema' },
     ]);
   }
 
@@ -28,10 +29,10 @@ export const writeInputJsonValue = ({
             .writeLine(`z.number(),`)
             .writeLine(`z.boolean(),`)
             .writeLine(
-              `z.object({ toJSON: z.function(z.tuple([]), z.any()) }),`,
+              `z.object({ toJSON: CreateFunctionSchema(z.tuple([]), z.any()) }),`,
             )
             .writeLine(
-              `z.record(z.lazy(() => z.union([InputJsonValueSchema, z.literal(null)]))),`,
+              `z.record(z.union([z.string(), z.number()]), z.lazy(() => z.union([InputJsonValueSchema, z.literal(null)]))),`,
             )
             .writeLine(
               `z.array(z.lazy(() => z.union([InputJsonValueSchema, z.literal(null)]))),`,

@@ -9,7 +9,7 @@ export const writeNullableJsonValue = ({
 
   if (useMultipleFiles && !getSingleFileContent) {
     writeImports([
-      { name: 'z', path: 'zod' },
+      { name: 'z', path: 'zod/v4' },
       { name: 'transformJsonNull', path: './transformJsonNull' },
       { name: 'JsonValueSchema', path: './JsonValueSchema' },
     ]);

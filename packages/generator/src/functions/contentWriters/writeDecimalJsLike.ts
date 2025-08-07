@@ -9,8 +9,9 @@ export const writeDecimalJsLike = ({
 
   if (useMultipleFiles && !getSingleFileContent) {
     writeImports([
-      { name: 'z', path: 'zod' },
+      { name: 'z', path: 'zod/v4' },
       { name: 'Prisma', path: prismaClientPath, isTypeOnly: true },
+      { name: 'CreateFunctionSchema', path: './CreateFunctionSchema' },
     ]);
   }
 
@@ -24,7 +25,7 @@ export const writeDecimalJsLike = ({
         .writeLine(`d: z.array(z.number()),`)
         .writeLine(`e: z.number(),`)
         .writeLine(`s: z.number(),`)
-        .writeLine(`toFixed: z.function(z.tuple([]), z.string()),`);
+        .writeLine(`toFixed: CreateFunctionSchema(z.tuple([]), z.string()),`);
     })
     .writeLine(`})`);
 

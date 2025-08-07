@@ -15,7 +15,7 @@ export const writeSelect = (
     writeImports([
       {
         name: 'z',
-        path: 'zod',
+        path: 'zod/v4',
       },
       {
         name: 'Prisma',

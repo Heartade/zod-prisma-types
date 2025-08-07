@@ -198,7 +198,7 @@ export class ExtendedDMMFInputType
     }
     fieldImports.push({
       name: 'z',
-      path: 'zod',
+      path: 'zod/v4',
     });
     fieldImports.push(
       ...this.fields.map((field) => field.getImports(this.name)).flat(),

@@ -17,7 +17,7 @@ export const writeCountArgs = (
 
   if (useMultipleFiles && !getSingleFileContent) {
     const imports: writeImportStatementOptions[] = [];
-    imports.push({ name: 'z', path: 'zod' });
+    imports.push({ name: 'z', path: 'zod/v4' });
     imports.push({ name: 'Prisma', path: prismaClientPath, isTypeOnly: true });
     imports.push({
       name: `${model.name}CountOutputTypeSelectSchema`,
