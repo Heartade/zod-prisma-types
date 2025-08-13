@@ -9,7 +9,11 @@ export const writeSingleFileArgTypeStatements: WriteStatements = (
   dmmf,
   fileWriter,
 ) => {
-  if (!dmmf.generatorConfig.createInputTypes) return;
+  if (
+    !dmmf.generatorConfig.createInputTypes ||
+    !dmmf.generatorConfig.createArgTypes
+  )
+    return;
 
   fileWriter.writer.blankLine();
 

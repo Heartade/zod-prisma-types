@@ -12,7 +12,11 @@ import {
 /////////////////////////////////////////////////
 
 export const writeArgTypeFiles: CreateFiles = ({ path, dmmf }) => {
-  if (!dmmf.generatorConfig.createInputTypes) return;
+  if (
+    !dmmf.generatorConfig.createInputTypes ||
+    !dmmf.generatorConfig.createArgTypes
+  )
+    return;
 
   const { outputTypePath, writeBarrelFiles } = dmmf.generatorConfig;
 

@@ -26,6 +26,11 @@ export const configSchema = z.object({
     .optional()
     .default('true')
     .transform((val) => val === 'true'),
+  createArgTypes: z
+    .string()
+    .optional()
+    .default('true')
+    .transform((val) => val === 'true'),
   createModelTypes: z
     .string()
     .optional()
